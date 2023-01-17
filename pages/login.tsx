@@ -1,5 +1,7 @@
 import React from 'react'
 import {Box, Typography, TextField, Button} from '@mui/material';
+import styles from '../styles/Default.module.css'
+
 
 function login() {
   return (
@@ -7,6 +9,7 @@ function login() {
     <div>
       <form >
         <Box 
+        className={styles.card}
         display = "flex" 
         flexDirection={"column"} 
         maxWidth = {400} 
@@ -16,16 +19,15 @@ function login() {
         marginTop={5} 
         padding={'50px'} 
         borderRadius={5} 
-        boxShadow={'5px 5px 10px #ccc'}
-        sx={{":hover":{
-          boxShadow:'10px 10px 20px #ccc'
-        }}}>
+        marginBottom = {5}
+        boxShadow={'2px 2px 2px #ccc'}
+        >
           <Typography 
           variant='h3'
           padding= {3}
-          textAlign = "center">LOGIN</Typography>
-          <TextField type='email' name="email"  required label="Email" variant="outlined" multiline placeholder='Enter email address' margin='normal' fullWidth color='error' />
-          <TextField type="password" name="password"  required label="Password" variant="outlined" multiline placeholder='Enter password' margin="normal" fullWidth color='error' id="outlined-password-input" />
+          textAlign = "center" className={styles.heading}>Login</Typography>
+          <TextField className={styles.textFields} type='email' name="email"  required label="Email" variant="outlined" multiline margin='normal' fullWidth />
+          <TextField className={styles.textFields} type="password" name="password"  required label="Password" variant="outlined" multiline  margin="normal" fullWidth />
           <Button sx={{marginTop: 3}} variant ="contained"  type="submit" color="error" size="large" fullWidth>Login</Button>  
           
         </Box>
